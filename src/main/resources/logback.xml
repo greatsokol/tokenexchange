@@ -21,6 +21,7 @@
     </appender>
 
     <logger name="org.springframework.security.web" level="error"/>
+    <logger name="org.gs.tokenexchange.controller.TokenExchangeController" level="info"/>
 
     <root level="info">
         <appender-ref ref="STDOUT"/>

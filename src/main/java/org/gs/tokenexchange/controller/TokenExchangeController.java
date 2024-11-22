@@ -26,7 +26,8 @@ public class TokenExchangeController {
 
         try {
             String resultingJwt = JwtUtils.removeSign(authorization.substring(cutLength));
-            logger.info("incoming: {}, outgoing: {}", authorization, resultingJwt);
+            logger.info("success");
+            logger.debug("incoming: {}, outgoing: {}", authorization, resultingJwt);
             return new ResponseEntity<>(resultingJwt, HttpStatus.OK);
         } catch (Exception ex) {
             String message = ex.getMessage();
