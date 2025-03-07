@@ -16,7 +16,7 @@ public class TokenExchangeController {
     private final Logger logger = LoggerFactory.getLogger(TokenExchangeController.class.getName());
 
     @GetMapping(value = "exchange", consumes = MediaType.ALL_VALUE)
-    public ResponseEntity<String> handleRequest(@RequestHeader String authorization) {
+    public ResponseEntity<String> handleRequest(@RequestHeader(required = false) String authorization) {
 
         if (authorization == null || !authorization.substring(0, cutLength).equalsIgnoreCase("BEARER ")) {
             String message = "no authorization bearer header";

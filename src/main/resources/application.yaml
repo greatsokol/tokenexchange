@@ -1,15 +1,21 @@
 server:
   port: 9000
   ssl:
-    certificate: "classpath:any.local.crt"
-    certificate-private-key: "classpath:any.local.key"
+#    certificate: "classpath:any.local.crt"
+#    certificate-private-key: "classpath:any.local.key"
+
+    key-store: "classpath:any.local.p12"
+    key-store-password: ""
+    keyStoreType: PKCS12
+
+    #client-auth: need
 #spring.security.user.name=user
 #spring.security.user.password=user
 
 
 #-----------------------------------------------------------------------------
 consul:
-  enabled: true
+  enabled: false
   url: "http://localhost:8500"
   acltoken: "1f57b9dc-e104-8843-519b-7f795bc8a364"
   service:
