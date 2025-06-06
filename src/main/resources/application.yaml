@@ -32,3 +32,23 @@ consul:
     note: "tokenexchange alive and reachable"
 
 
+vault:
+  enabled: true
+  host: localhost
+  port: 8200
+  ssl:
+    # store/cert
+    type: cert
+    #key-store: classpath:localhost.p12
+    #key-store-type: PKCS12
+    #key-store-password: 1979
+    certificate: classpath:localhost.crt
+    key: classpath:localhost.key
+  paths:
+    apim:
+      apps:
+        config:
+          kcusers:
+            db-username: spring.datasource.username
+            db-password: spring.datasource.password
+            service-keycloak-client-secret: service.keycloakclient.client.client-secret
