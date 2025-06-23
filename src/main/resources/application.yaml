@@ -1,12 +1,12 @@
 server:
   port: 9000
-  ssl:
+#  ssl:
 #    certificate: "classpath:any.local.crt"
 #    certificate-private-key: "classpath:any.local.key"
 
-    key-store: "classpath:any.local.p12"
-    key-store-password: ""
-    keyStoreType: PKCS12
+#    key-store: "classpath:any.local.p12"
+#    key-store-password: ""
+#    keyStoreType: PKCS12
 
     #client-auth: need
 #spring.security.user.name=user
@@ -34,16 +34,15 @@ consul:
 
 vault:
   enabled: true
-  host: localhost
-  port: 8200
+  uri: https://localhost:8200
   ssl:
     # store/cert
     type: cert
-    #key-store: classpath:localhost.p12
-    #key-store-type: PKCS12
-    #key-store-password: 1979
-    certificate: classpath:localhost.crt
-    key: classpath:localhost.key
+    #    key-store: classpath:localhost.p12
+    #    key-store-type: PKCS12
+    #    key-store-password: 1979
+    certificate: classpath:sokolov.personal.ca2.crt
+    key: classpath:sokolov.personal.ca2.key
   paths:
     apim:
       apps:
